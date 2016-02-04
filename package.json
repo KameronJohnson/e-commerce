@@ -1,13 +1,26 @@
 {
-  "name": "chat-example",
+  "name": "e-commerce",
   "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "description": "This is an e-commerce website",
   "main": "server.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KameronJohnson/e-commerce.git"
+  },
   "author": "Mostafa Eweda <mo.eweda@gmail.com>",
   "dependencies": {
     "async": "~0.2.8",
     "express": "~3.2.4",
+    "morgan": "^1.6.1",
     "socket.io": "~0.9.14"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KameronJohnson/e-commerce/issues"
+  },
+  "homepage": "https://github.com/KameronJohnson/e-commerce#readme"
 }
