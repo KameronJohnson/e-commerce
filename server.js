@@ -41,7 +41,12 @@ app.post('/create-user', function(req, res, next) {
 
 app.get('/', function(req, res) {
   res.render('home');
-})
+});
+
+app.get('/about', function(req, res) {
+  res.render('about');
+});
+
 
 app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(err) {
   if (err) throw err;
