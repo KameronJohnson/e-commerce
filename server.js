@@ -18,6 +18,7 @@ mongoose.connect('mongodb://daddy:gussy05@ds043694.mongolab.com:43694/e-commerce
 });
 
 //Middleware
+app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 //Express can parse JSON data now
 app.use(bodyParser.json());
