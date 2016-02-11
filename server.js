@@ -27,7 +27,7 @@ app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
 var mainRoutes = require('./routes/main');
-var userRoutes = require('/routes/user');
+var userRoutes = require('./routes/user');
 app.use(mainRoutes);
 app.use(userRoutes);
 

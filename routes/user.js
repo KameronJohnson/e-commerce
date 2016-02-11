@@ -12,6 +12,7 @@ router.post('/signup', function(req, res, next) {
   user.email = req.body.email;
   user.password = req.body.password;
   
+  //findOne is a mongoose method
   User.findOne({ email: req.body.email }, function(existingUser) {
       if (existingUser) {
           console.log(req.body.email + " already exists!");
