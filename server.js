@@ -4,6 +4,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var engine = require('ejs-mate');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var flash = require('express-flash');
 
 var User = require('./models/user');
 
@@ -23,6 +26,14 @@ app.use(morgan('dev'));
 //Express can parse JSON data now
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: 'Kamarama'
+}));
+app.use(flash());
+
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
