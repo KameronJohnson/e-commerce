@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var User = require('../models/user.js');
-var passport = require('passpot');
+var passport = require('passport');
 var passportConf = require('../config/passport');
 
 router.get('/login', function(req, res) {

@@ -8,7 +8,7 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('express-flash');
 //MongoStore stores a user session server-side
-var MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo/es5')(session);
 var passport = require('passport');
 
 var secret = require('./config/secret');
