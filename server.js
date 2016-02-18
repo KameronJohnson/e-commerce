@@ -7,9 +7,9 @@ var engine = require('ejs-mate');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('express-flash');
-
 //MongoStore stores a user session server-side
 var MongoStore = require('connect-mongo')(session);
+var passport = require('passport');
 
 var secret = require('./config/secret');
 var User = require('./models/user');
