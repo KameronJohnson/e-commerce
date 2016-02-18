@@ -8,11 +8,12 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('express-flash');
 
+var secret = require('./config/secret');
 var User = require('./models/user');
 
 var app = express();
 
-mongoose.connect('mongodb://daddy:gussy05@ds043694.mongolab.com:43694/e-commerce', function(err) {
+mongoose.connect(secret.database, function(err) {
   if (err) {
     console.log(err);
   } else {
@@ -30,7 +31,7 @@ app.use(cookieParser());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: 'Kamarama'
+  secret: secret.secretKey
 }));
 app.use(flash());
 
@@ -42,7 +43,7 @@ var userRoutes = require('./routes/user');
 app.use(mainRoutes);
 app.use(userRoutes);
 
-app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(err) {
+app.listen(process.env.PORT || secret.port, process.env.IP || "0.0.0.0", function(err) {
   if (err) throw err;
-  console.log("Silly Server is running on Port 3000");
+  console.log("Silly Server is running on " + secret.port);
 });
