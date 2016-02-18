@@ -33,3 +33,9 @@ passport.use('local-login', new LocalStrategy({
 
 
 //custom validation function
+exports.isAuthenticated = function(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } 
+    res.resdirect('/login');
+}
