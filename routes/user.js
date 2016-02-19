@@ -19,6 +19,7 @@ router.get('/profile', function(req, res, next) {
   User.findOne({ _id: req.user._id }, function(err, user) {
     if (err) return next(err);
     res.render('accounts/profile', { user: user});
+  });
 });
 
 router.get('/signup', function(req, res, next){
