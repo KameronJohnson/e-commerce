@@ -68,7 +68,7 @@ router.post('/edit-profile', function(req, res, next) {
   User.findOne({ _id: req.user._id }, function(err, user) {
     if (err) return next(err);
     if (req.body.name) user.profile.name = req.body.name;
-    if (req.body.address) user.profile.address = req.body.address;
+    if (req.body.address) user.address = req.body.address;
     
     user.save(function(err) {
       if (err) return next(err);
