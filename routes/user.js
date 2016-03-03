@@ -61,7 +61,7 @@ router.get('/logout', function(req, res) {
 });
 
 router.get('/edit-profile', function(req, res, next) {
-  res.render('accounts/edit-profile.ejs', { message: req.flash('success')});
+  res.render('accounts/edit-profile', { message: req.flash('success')});
 });
 
 router.post('/edit-profile', function(req, res, next) {
@@ -72,7 +72,7 @@ router.post('/edit-profile', function(req, res, next) {
     
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('succes', 'Profile successfully updated.');
+      req.flash('success', 'Profile successfully updated.');
       return res.redirect('/edit-profile');
     })
   });
