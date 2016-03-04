@@ -52,8 +52,11 @@ app.set('view engine', 'ejs');
 
 var mainRoutes = require('./routes/main');
 var userRoutes = require('./routes/user');
+var adminRoutes = require('./routes/admin');
+
 app.use(mainRoutes);
 app.use(userRoutes);
+app.use(adminRoutes);
 
 app.listen(process.env.PORT || secret.port, process.env.IP || "0.0.0.0", function(err) {
   if (err) throw err;

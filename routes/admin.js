@@ -17,3 +17,5 @@ router.post('/add-category', function(req, res, next) {
         
     })
 });
+
+module.exports = router;
